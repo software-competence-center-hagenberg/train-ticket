@@ -5,7 +5,7 @@ with revised error branches and instructions for setting up the system with the 
 [EvoMaster](https://github.com/WebFuzzing/EvoMaster). 
 
 For information on the system, adaptations and setup please visit the [Wiki](https://github.com/software-competence-center-hagenberg/train-ticket/wiki).
-The individual branches do contain a rudimentary readme, acting as a short summary. Details are available in the wiki.
+The individual branches contain a readme, describing the injected fault and necessary adaptions. The contents of these readmes and further details are available in the wiki.
 
 The repository contains various versions of the Trainticket microservice system.
 The master and ts-error-cleaned branch have no deliberately built-in faults, the remaining branches each
