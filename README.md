@@ -1,4 +1,4 @@
-### error-f10
+### ts-error-F10
 
 #### Original description (ts-error-logic-F10)
 > F10 is simply a normal logic fault in one business process.
@@ -43,8 +43,8 @@
 >    7. Find out why and fix it.
 
 #### Notes
-1. The code or git branch used in this fault is not the one mentioned in the [fault replication repository](https://github.com/FudanSELab/train-ticket-fault-replicate#f10-ts-error-logic-f10)
-   The repository states that **ts-error-logic-f10** should be the correct branch but the code in this branch does not show the expected behaviour.
+1. The code or git branch used in this fault is not the one mentioned in the [fault replication repository](https://github.com/FudanSELab/train-ticket-Fault-replicate#f10-ts-error-logic-F10)
+   The repository states that **ts-error-logic-F10** should be the correct branch but the code in this branch does not show the expected behaviour.
 2. The probably correct branch and code is **ts-error-normal-F10** in the fault replication repository, which is most likely contained in the
    corresponding zip package at https://fudanselab.github.io/research/MSFaultEmpiricalStudy/ (at least the contents of `PreserveOtherServiceImpl`, which is the root cause of the injected error, are identical).
 
@@ -55,7 +55,7 @@ To deactivate this fault the following lines in ``PreserveOtherServiceImpl`` hav
 ```java
 /**********If user create a contact with duplicate ID，throw exception***********/
 if(oti.getIsCreateContacts().equals("true") && addContactsResult.isExists() == true){
-    throw new RuntimeException("[Normal Error] Reproduction Of Error Normal");
+        throw new RuntimeException("[Normal Error] Reproduction Of Error Normal");
 }
 ```
 
@@ -65,5 +65,5 @@ commented out code in this file, which might look like they have to be active to
 #### Thoughts
 Thinking about the fault, I would expect the application to throw an exception/error when someone creates a contact info
 with a duplicate document number. Hence, the actual fault happens when no exception is thrown i.e., when the system does
-not prevent duplicate document ids. The description of (ts-error-normal-F10) hints at this behaviour but in combination
-with the other descriptions there is room for interpretation. 
+not prevent duplicate document ids. The description of (ts-error-normal-F10) hints at this behaviour. But in combination
+with the other descriptions, there is room for interpretation.
